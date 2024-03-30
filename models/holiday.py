@@ -2,9 +2,11 @@ from typing import List, Optional
 from pydantic import BaseModel, field_validator
 from datetime import datetime
 
+
 class Laws(BaseModel):
     nombre: str
     url: str
+
 
 class Holiday(BaseModel):
     nombre: str
@@ -20,8 +22,7 @@ class Holiday(BaseModel):
             return None
         else:
             return comment
-    
+
     @field_validator("fecha", mode="before")
     def validate_date(cls, date):
-        return datetime.strptime(date, '%Y-%m-%d')
-
+        return datetime.strptime(date, "%Y-%m-%d")
