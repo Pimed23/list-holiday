@@ -5,9 +5,11 @@ def get_holidays():
     try:
         headers = {"User-Agent": "ListHoliday/1.0"}
         response = requests.get("https://apis.digital.gob.cl/fl/feriados", headers=headers)
+        response.raise_for_status()
         holidays_data = response.json()
         holidays = [Holiday(**holiday) for holiday in holidays_data]
-        print(holidays)
+        filtered_holidays = [data for data in holidays if data.fecha.year > 2020]
+        return filtered_holidays
 
     except requests.exceptions.RequestException as e:
         # Handle network-related errors
