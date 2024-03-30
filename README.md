@@ -6,6 +6,11 @@ This program requests information from the legal holidays API in Chile (https://
 - [Pydantic](https://docs.pydantic.dev/latest/) to generate and validate data models
 - Testing and coverage using [Pytest](https://docs.pydantic.dev/latest/)
 ---
+# Requirements
+- python ^3.10
+- pip
+- poetry
+   
 # Quickstart
 
 On your local machine, navigate to the directory in which you want to create a project directory, and clone the project:
@@ -13,7 +18,7 @@ On your local machine, navigate to the directory in which you want to create a p
 git clone https://github.com/Pimed23/list-holiday.git
 ```
 
-After that, we navigate to the directory we just cloned. As mentioned earlier, the project is built using Poetry, so we need to install it:
+After that, we navigate to the directory we just cloned. As mentioned earlier, the project is built using Poetry, so we need to install it (don't forget to set up the environment variables):
 ```
 pip install poetry
 ```
