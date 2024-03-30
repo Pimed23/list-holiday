@@ -1,10 +1,13 @@
 import requests
+from models.holiday import Holiday
 
 def get_holidays():
     try:
         headers = {"User-Agent": "ListHoliday/1.0"}
         response = requests.get("https://apis.digital.gob.cl/fl/feriados", headers=headers)
-        print(response)
+        holidays_data = response.json()
+        holidays = [Holiday(**holiday) for holiday in holidays_data]
+        print(holidays)
 
     except requests.exceptions.RequestException as e:
         # Handle network-related errors
