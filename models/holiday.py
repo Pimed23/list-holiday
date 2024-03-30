@@ -21,7 +21,7 @@ class Holiday(BaseModel):
     # Validator for 'comentarios' field 
     @field_validator("comentarios")
     def validate_comments(cls, comment):
-        # If comments are None or empty string
+        # If comments are None or empty string returns null
         if comment is None or comment.strip() == "":
             return None
         else:

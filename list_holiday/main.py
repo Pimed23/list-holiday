@@ -1,4 +1,5 @@
 import requests
+from typing import List
 from models.holiday import Holiday
 
 # Make a request to the holiday API to obtain the holiday data.
@@ -28,7 +29,7 @@ def get_holidays():
 
 
 # Processes the response and extracts the information on holidays from 2020 onwards
-def filter_holidays(holidays):
+def filter_holidays(holidays: List[Holiday]):
     filtered_holidays = []
     for holiday in holidays:
         if holiday.fecha.year > 2019:
